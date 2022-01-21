@@ -25,7 +25,36 @@ let package = Package(
       dependencies: ["protobufcpp"],
       path: "sdk",
       exclude: [
-          //
+        "build.gradle",
+        "rendering/android/shaders/distortion.frag",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/camera/CameraSourcePreview.java",
+        "screen_params/android/java/com/google/cardboard/sdk/screenparams/ScreenParamsUtils.java",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/QrCodeContentProcessor.java",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/QrCodeTracker.java",
+        "qrcode/android/res/values/styles.xml",
+        "qrcode/android/res/drawable-xxhdpi/tick_marks.png",
+        "qrcode/android/res/drawable-xxhdpi/qr_sample.png",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/UrlFactory.java",
+        "qrcode/android/res/values/strings.xml",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/OutputStreamProvider.java",
+        "qrcode/android/java/com/google/cardboard/sdk/QrCodeCaptureActivity.java",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/CardboardParamsUtils.java",
+        "cardboard_api.lds",
+        "device_params/android/java/com/google/cardboard/sdk/deviceparams/DeviceParamsUtils.java",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/InputStreamProvider.java",
+        "CMakeLists.txt",
+        "qrcode/android/java/com/google/cardboard/sdk/HeadsetDetectionActivity.java",
+        "rendering/android/shaders/distortion.vert",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/camera/CameraSource.java",
+        "qrcode/android/res/layout/qr_code_capture.xml",
+        "qrcode/android/AndroidManifest.xml",
+        "rendering/android/shaders/distortion_frag.spv",
+        "device_params/android/java/com/google/cardboard/sdk/deviceparams/CardboardV1DeviceParams.java",
+        "proguard-rules.pro",
+        "qrcode/android/java/com/google/cardboard/sdk/qrcode/QrCodeTrackerFactory.java",
+        "qrcode/android/res/values/colors.xml",
+        "rendering/android/shaders/distortion_vert.spv",
+        "qrcode/ios/sdk.bundle",
       ],
       cxxSettings: [
         .headerSearchPath("proto"),
@@ -38,7 +67,6 @@ let package = Package(
       linkerSettings: [
         .linkedFramework("MetalKit"),
         .linkedFramework("Metal"),
-
       ]
     ),
 
@@ -47,7 +75,15 @@ let package = Package(
       dependencies: [],
       path: "third_party/Protobuf-C++",
       exclude: [
-          //
+        "src/google/protobuf/wire_format_unittest.inc",
+        "src/google/protobuf/message_unittest.inc",
+        "src/google/protobuf/proto3_lite_unittest.inc",
+        "README.md",
+        "LICENSE",
+        "src/google/protobuf/port_def.inc",
+        "src/google/protobuf/test_util.inc",
+        "src/google/protobuf/generated_message_tctable_impl.inc",
+        "src/google/protobuf/port_undef.inc",
       ],
       cxxSettings: [
         .headerSearchPath("src"),
