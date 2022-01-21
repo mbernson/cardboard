@@ -32,6 +32,7 @@ let package = Package(
 
         "unity/xr_unity_plugin/renderer.h",
 
+        "jni_utils/android",
         "device_params/android",
         "unity/android",
         "screen_params/android",
@@ -39,12 +40,14 @@ let package = Package(
         "qrcode/android",
         "rendering/android",
       ],
-      resources: [.copy("qrcode/ios/sdk.bundle")],
-//      publicHeadersPath: "sdk/include",
+      resources: [
+        .copy("qrcode/ios/sdk.bundle"),
+      ],
+      publicHeadersPath: "sdk/include",
       cxxSettings: [
         .headerSearchPath("."),
-        .headerSearchPath("proto"),
-//        .headerSearchPath("third_party/unity_plugin_api"),
+        .headerSearchPath("../proto"),
+        .headerSearchPath("../third_party/unity_plugin_api"),
 
         .define("GLES_SILENCE_DEPRECATION"),
 
@@ -55,7 +58,6 @@ let package = Package(
       linkerSettings: [
         .linkedFramework("MetalKit"),
         .linkedFramework("Metal"),
-//        .unsafeFlags(["-ObjC"]),
       ]
     ),
 
@@ -74,6 +76,7 @@ let package = Package(
         "src/google/protobuf/generated_message_tctable_impl.inc",
         "src/google/protobuf/port_undef.inc",
       ],
+      publicHeadersPath: "src",
       cxxSettings: [
         .headerSearchPath("src"),
 
@@ -93,15 +96,7 @@ let package = Package(
       dependencies: [],
       path: "third_party/unity_plugin_api",
       exclude: [
-//          "src/google/protobuf/wire_format_unittest.inc",
-//          "src/google/protobuf/message_unittest.inc",
-//          "src/google/protobuf/proto3_lite_unittest.inc",
-//          "README.md",
-//          "LICENSE",
-//          "src/google/protobuf/port_def.inc",
-//          "src/google/protobuf/test_util.inc",
-//          "src/google/protobuf/generated_message_tctable_impl.inc",
-//          "src/google/protobuf/port_undef.inc",
+          "LICENSE",
       ],
       sources: ["."],
       publicHeadersPath: ".",
@@ -110,8 +105,6 @@ let package = Package(
       ],
       cxxSettings: [
         .headerSearchPath("."),
-
-//          .define("HAVE_PTHREAD", to: "1"),
 
         .unsafeFlags([
           "-std=c++11",
