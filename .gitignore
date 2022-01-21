@@ -16,3 +16,4 @@ hellocardboard-android/libraries/
 .swiftpm
 .build
 Pods
+xcuserdata
